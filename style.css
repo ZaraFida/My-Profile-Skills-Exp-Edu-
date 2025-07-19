@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Universal Styles and Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px for easier calculations */
+    overflow-x: hidden;
+}
+
+body {
+    background: #F8F8F0; /* Slightly darker beige for better contrast */
+    color: #333333; /* Dark text color for light backgrounds */
+}
+
+/* Header Styling */
+.header {
+    position: fixed; /* Header will stay at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: #4682B4; /* Steel Blue header background */
+    display: flex; /* For side-by-side layout of logo and nav */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; /* Ensure header is on top of other content */
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #F5F5DC; /* Beige text for logo for contrast */
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: #F5F5DC; /* Beige text for nav links for contrast */
+    margin-left: 3.5rem;
+    transition: .3s; /* Smooth transition for hover effects */
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00BFFF; /* Brighter accent blue hover color */
+}
+
+/* Section Common Styling */
+section {
+    min-height: 100vh; /* Each section takes at least full viewport height */
+    padding: 10rem 9% 2rem; /* Top padding to account for fixed header */
+    display: flex; /* For centering content within sections */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Home Section (Hero Section) Styling */
+.home {
+    flex-direction: row; /* Overwrite column for home section to be row */
+    padding: 7rem 9% 2rem; /* Adjusted padding for this section */
+    justify-content: space-between; /* Space between text and image */
+}
+
+.home-content {
+    max-width: 60rem; /* Max width for the text block on the left */
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content .text-animation {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #00BFFF; /* Brighter accent blue for "Full Stack Developer" */
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
+
+/* Buttons Styling */
+.btn-box {
+    display: flex; /* To place buttons side by side */
+    gap: 2rem; /* Space between the two buttons */
+}
+
+.btn-box .btn {
+    display: inline-flex;
+    width: 15rem;
+    height: 5rem;
+    background: #00BFFF; /* Brighter accent blue default background color for button */
+    border: .2rem solid #00BFFF; /* Brighter accent blue border color */
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    color: #F5F5DC; /* Beige text color for filled button */
+    font-weight: 600;
+    letter-spacing: .1rem;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease; /* Smooth transition for hover effects */
+}
+
+.btn-box .btn:nth-child(2) { /* Styling for the second button ("Download CV") */
+    background: transparent; /* Transparent background */
+    color: #00BFFF; /* Brighter accent blue text color */
+}
+
+.btn-box .btn:nth-child(2):hover { /* Hover effect for second button */
+    background: #00BFFF; /* Brighter accent blue */
+    color: #333333; /* Dark text on hover */
+}
+
+.btn-box .btn:hover { /* Hover effect for first button */
+    background: transparent;
+    color: #00BFFF; /* Brighter accent blue */
+    box-shadow: 0 0 1rem rgba(0, 191, 255, 0.7); /* Added shadow for hover effect */
+}
+
+/* Image Styling (Circular Image) */
+.home-img {
+    width: 40rem; /* Container width */
+    height: 40rem; /* Container height */
+    border-radius: 50%; /* Make the container circular */
+    overflow: hidden; /* Hide anything outside the circle */
+    display: flex; /* To center the image inside the circle */
+    justify-content: center;
+    align-items: center;
+    border: .5rem solid #00BFFF; /* Brighter accent blue border around the circle */
+    box-shadow: 0 0 2rem #00BFFF; /* Brighter accent blue shadow around the circle */
+}
+
+.home-img img {
+    width: 100%; /* Make image fill the circular container */
+    height: 100%;
+    object-fit: cover; /* Crop image if necessary to cover the area */
+    border-radius: 50%; /* Ensure image itself is also circular */
+}
+
+/* Social Media Icons (Used in Home section, can be used elsewhere too) */
+.social-media {
+    margin-top: 1.5rem; /* Space from above content */
+    display: flex;
+    gap: 1.5rem; /* Space between icons */
+    justify-content: center; /* Center icons in home section if text is centered */
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid #00BFFF; /* Brighter accent blue border */
+    border-radius: 50%; /* Circular icons */
+    font-size: 2rem;
+    color: #00BFFF; /* Brighter accent blue icon color */
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: #00BFFF; /* Brighter accent blue */
+    color: #F5F5DC; /* Beige */
+    box-shadow: 0 0 1rem #00BFFF; /* Brighter accent blue */
+}
+
+/* About Section Styling */
+.about {
+    background: #ADD8E6; /* Sky Blue background */
+    text-align: center;
+}
+
+.about .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #333333; /* Dark text for heading */
+}
+
+.about-content {
+    max-width: 80rem; /* Content block ki max width */
+    padding: 0 2rem; /* Left/right padding */
+}
+
+.about-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00BFFF; /* Brighter accent blue color */
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #333333; /* Dark text color */
+    margin-bottom: 2rem; /* Added margin-bottom for paragraph */
+}
+
+/* Services Section */
+.services {
+    background: #F8F8F0; /* Slightly darker beige background for services section */
+    text-align: center;
+}
+.services h2 {
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Items wrap to next line if space is less */
+    gap: 2rem; /* Space between service boxes */
+}
+
+.services-container .services-box {
+    flex: 1 1 30rem; /* Flex item properties */
+    background: #ADD8E6; /* Sky Blue background for service boxes */
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid #F8F8F0; /* Border color same as main background */
+    transition: .5s ease;
+}
+
+.services-container .services-box:hover {
+    border-color: #00BFFF; /* Brighter accent blue hover border color */
+    transform: scale(1.02); /* Slight grow effect on hover */
+}
+
+.services-box i {
+    font-size: 8rem; /* Slightly larger icons */
+    color: #00BFFF; /* Brighter accent blue */
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+    margin-top: 1rem;
+    color: #333333; /* Dark text */
+}
+
+.services-box p {
+    font-size: 1.5rem;
+    margin: 1rem 0 3rem;
+    color: #333333; /* Dark text */
+}
+
+/* Experience & Education Common Styling (Timeline-like) */
+.experience, .education {
+    background: #ADD8E6; /* Sky Blue common background for these sections */
+    text-align: center; /* Center the heading */
+}
+
+.experience .heading, .education .heading {
+    margin-bottom: 5rem;
+}
+
+.experience-container, .education-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.experience-box, .education-box {
+    flex: 1 1 40rem; /* Adjust width for boxes */
+    background: #F8F8F0; /* Slightly darker beige background for boxes */
+    padding: 3rem;
+    border-radius: 2rem;
+    border: .2rem solid #00BFFF; /* Brighter accent blue border */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.experience-box::before, .education-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00BFFF; /* Brighter accent blue */
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.experience-box:hover::before, .education-box:hover::before {
+    width: 100%;
+}
+
+.experience-box .experience-content,
+.education-box .education-content {
+    color: #333333; /* Dark text color for content */
+}
+
+.experience-box:hover .experience-content,
+.education-box:hover .education-content {
+    color: #F8F8F0; /* Beige text color changes on hover */
+}
+
+.experience-box .year, .education-box .year {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #00BFFF; /* Brighter accent blue */
+    margin-bottom: .5rem;
+}
+
+.experience-box:hover .year, .education-box:hover .year {
+    color: #F8F8F0; /* Beige year color changes on hover */
+}
+
+.experience-box .year i, .education-box .year i {
+    margin-right: .8rem;
+}
+
+.experience-box h3, .education-box h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.experience-box p, .education-box p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+
+/* Projects Section */
+.projects {
+    background: #F8F8F0; /* Slightly darker beige background for projects section */
+    text-align: center;
+}
+.projects h2 {
+    margin-bottom: 5rem;
+}
+
+.projects-container {
+    display: grid; /* Grid layout for projects */
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr)); /* Adjusted for wider boxes */
+    gap: 2.5rem;
+}
+
+.projects-container .projects-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+    overflow: hidden;
+    display: flex; /* To align image and layer */
+    height: 40rem;
+    width: 700px; /* Explicitly set height for taller boxes */
+}
+
+.projects-box img {
+    width: 100%;
+    height: 100%; /* Image fills the height of its parent */
+    object-fit: cover; /* Crops image to cover the area without distortion */
+    transition: .5s ease;
+}
+
+.projects-box:hover img {
+    transform: scale(1.1); /* Zoom effect on image hover */
+}
+
+.projects-box .projects-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .3), #00BFFF); /* Adjusted gradient overlay for better text visibility */
+    display: flex;
+    justify-content: center; /* Aligns items from the start (top) */
+    align-items: center; /* Aligns items to the left (start of cross-axis) */
+    flex-direction: column;
+    padding: 2rem 3rem; /* Uniform padding for more balanced space */
+    transform: translateY(100%); /* Initially hidden below */
+    transition: .5s ease;
+    gap: 0.5rem; /* Space between elements */
+}
+
+.projects-box:hover .projects-layer {
+    transform: translateY(0); /* Slide up on hover */
+}
+
+.projects-layer h4 {
+    font-size: 3rem;
+    color: #ededed; /* Keep light text for contrast on blue gradient */
+    text-align: left; /* Align heading to the left */
+    width: 100%; /* Ensure heading takes full width */
+}
+
+.projects-layer p {
+    font-size: 1.5rem; /* Slightly smaller font size for better fit */
+    margin: .5rem 0 0; /* Adjusted margin to reduce space below paragraph */
+    color: #ededed; /* Keep light text for contrast on blue gradient */
+    line-height: 1.3; /* Reduced line-height */
+    text-align: left; /* Align paragraph to the left */
+    width: 100%; /* Ensure paragraph takes full width */
+}
+
+.projects-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: #ededed; /* Light background for icon */
+    border-radius: 50%;
+    color: #00BFFF; /* Brighter accent blue color for icon */
+    font-size: 2rem;
+    margin-top: auto; /* Pushes the link to the bottom of the flex container */
+    align-self: flex-start; /* Aligns the icon to the left */
+}
+
+/* Contact Section Styling */
+.contact {
+    background: #F8F8F0; /* Slightly darker beige background color */
+    text-align: center;
+}
+
+.contact .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #333333; /* Dark text for heading */
+}
+
+.contact form {
+    max-width: 70rem; /* Form ki max width */
+    margin: 0 auto; /* Form ko center karne ke liye */
+    text-align: center;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Jab screen choti ho to wrap ho jayen */
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 49%; /* Har input field ki width (50% se thoda kam space ke liye) */
+    background: #E8F0FE; /* Very light blue background for input fields */
+    border-radius: .8rem;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: #333333; /* Dark text for input fields */
+    margin-bottom: 1.6rem;
+}
+
+.contact form textarea {
+    width: 100%; /* Textarea poori width legi */
+    resize: none; /* User resize na kar sake */
+    height: 20rem; /* Height set karein */
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer; /* Cursor pointer banayein */
+    background: #00BFFF; /* Brighter accent blue */
+    color: #F5F5DC; /* Beige */
+    border: .2rem solid #00BFFF; /* Brighter accent blue */
+    width: 15rem;
+    height: 5rem;
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.contact form .btn:hover {
+    background: transparent;
+    color: #00BFFF; /* Brighter accent blue */
+    box-shadow: 0 0 1rem rgba(0, 191, 255, 0.7); /* Added shadow for hover effect */
+}
+
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Items wrap ho jayen choti screen par */
+    padding: 2rem 9%;
+    background: #4682B4; /* Steel Blue footer background color */
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+    color: #F5F5DC; /* Beige text for footer text */
+}
+
+.footer-iconTop a {
+    position: relative;
+    right: unset; /* Override 'right' property if any */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: #00BFFF; /* Brighter accent blue */
+    border: .2rem solid #00BFFF; /* Brighter accent blue */
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: #F5F5DC; /* Beige */
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 2rem #00BFFF; /* Brighter accent blue */
+}
+
+
+/* BREAKPOINTS for Responsiveness (Colors adjusted where relevant) */
+/* Medium Devices (Tablets, 991px and below) */
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+    section {
+        padding: 10rem 4% 2rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img {
+        width: 35rem;
+        height: 35rem;
+    }
+    .home-content p {
+        margin: 1.5rem 0 2.5rem;
+    }
+    .btn-box .btn {
+        width: 13rem;
+        height: 4.5rem;
+        font-size: 1.6rem;
+    }
+    .about-content h3 {
+        font-size: 2.2rem;
+    }
+    .about-content p {
+        font-size: 1.5rem;
+    }
+    .contact form .input-box input,
+    .contact form textarea {
+        padding: 1.2rem;
+        font-size: 1.5rem;
+    }
+    .contact form .btn {
+        width: 13rem;
+        height: 4.5rem;
+        font-size: 1.6rem;
+    }
+    .footer {
+        padding: 1.5rem 4%;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .footer-iconTop {
+        margin-top: 1rem;
+    }
+    .social-media { /* For home section icons if they need to adjust */
+        margin-top: 2rem;
+        justify-content: center;
+    }
+}
+
+/* Small Devices (Phones, 768px and below) */
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 3%;
+    }
+    .logo {
+        font-size: 2.2rem;
+    }
+    .navbar a {
+        margin-left: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .home {
+        flex-direction: column-reverse; /* Home section ko reverse kar dein mobile par */
+        text-align: center;
+    }
+    .home-content {
+        margin-top: 3rem;
+    }
+    .home-img {
+        width: 30rem;
+        height: 30rem;
+        margin-top: 2rem;
+    }
+    .home-content h1 {
+        font-size: 4rem;
+    }
+    .home-content .text-animation {
+        font-size: 2.8rem;
+    }
+    .about-content h3 {
+        font-size: 2rem;
+    }
+    .about-content p {
+        font-size: 1.4rem;
+    }
+    .contact form .input-box input,
+    .contact form textarea {
+        width: 100%; /* Phones par input fields poori width lenge */
+    }
+    .services-container .services-box,
+    .experience-box,
+    .education-box {
+        flex: 1 1 100%; /* Full width on small screens */
+        max-width: 50rem; /* Max width to keep it readable */
+    }
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Adjust project grid for smaller screens */
+    }
+}
+
+/* Extra Small Devices (Smaller Phones, 480px and below) */
+@media (max-width: 480px) {
+    html {
+        font-size: 55%; /* Base font size thoda aur kam kar dein */
+    }
+    .header {
+        padding: 1rem 2%;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    /* Navbar will need a hamburger menu here, which needs JavaScript.
+       For now, it might overflow or stack. */
+    .navbar a {
+        margin-left: 1rem;
+        font-size: 1.3rem;
+    }
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+    .home-content .text-animation {
+        font-size: 2.5rem;
+    }
+    .home-img {
+        width: 25rem;
+        height: 25rem;
+    }
+    .btn-box {
+        flex-direction: column; /* Buttons ko ek ke neeche ek kar dein */
+        gap: 1rem;
+    }
+    .btn-box .btn {
+        width: 100%; /* Buttons poori width lenge */
+    }
+    .about .heading, .services .heading, .experience .heading, .projects .heading, .education .heading, .contact .heading {
+        font-size: 4rem;
+    }
+    .projects-container {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+}
